@@ -2,7 +2,7 @@ const width = 5;
 const height = 5;
 var count = width*height;
 
-var game = new Phaser.Game(350, 350, Phaser.Auto)
+var game = new Phaser.Game(350, 350, Phaser.Auto, 'game')
 var score = 0;
 var scoreText;
 var bubbles;
@@ -14,15 +14,14 @@ var pop;
 
 var GameState = {
 	preload: function(){
-		game.load.image('sky', 'assets/img/sky.png');
-		game.load.spritesheet('ground', 'assets/img/platform.png', 100, 200);
-		game.load.image('star', 'assets/img/star.png');
-        game.load.spritesheet('dude', 'assets/img/dude.png', 32, 48);
+		game.scale.pageAlignHorizontally = true; 
+		game.scale.pageAlignVertically = true;
         game.load.spritesheet('bubble', 'assets/img/bubble.png', 70, 70);
         game.load.audio('pop', 'assets/sound/pop.mp3');
+
 	},
 	create: function(){
-		game.stage.backgroundColor = "#4488AA";
+		game.stage.backgroundColor = "#fff";
 		bubbles = game.add.group();
 		populateBubbles();
 		pop = game.add.audio('pop');

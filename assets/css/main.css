@@ -1,6 +1,16 @@
-/*
+
 body {
 	margin: 0px;
 	padding: 0px;
-	background: black;
-}*/
+	background: #fff;
+}
+
+#header {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#game {
+	display: block;
+	margin: auto;
+}
